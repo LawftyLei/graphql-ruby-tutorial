@@ -5,6 +5,7 @@ ruby "3.0.0"
 
 gem 'graphql', '1.11.6'
 gem 'graphiql-rails', '1.7.0', group: :development
+gem 'bcrypt', '~> 3.1.13'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
