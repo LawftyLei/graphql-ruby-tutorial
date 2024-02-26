@@ -159,6 +159,10 @@ GEM
       psych (>= 4.0.0)
     reline (0.4.2)
       io-console (~> 0.5)
+    search_object (1.2.5)
+    search_object_graphql (0.3.1)
+      graphql (~> 1.8)
+      search_object (~> 1.2.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -194,6 +198,7 @@ DEPENDENCIES
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.8)
+  search_object_graphql (= 0.3.1)
   sprockets-rails
   sqlite3 (~> 1.4)
   tzinfo-data
