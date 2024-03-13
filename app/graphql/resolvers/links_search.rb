@@ -6,7 +6,7 @@ class Resolvers::LinksSearch
   include SearchObject.module(:graphql)
 
   # scope is starting point for search
-  scope { Link.all }
+  scope { Link.includes(:votes) }
 
   type types[Types::LinkType]
 
