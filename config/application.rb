@@ -33,5 +33,7 @@ module GraphqlRubyTutorial
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    ArLazyPreload.config.auto_preload = true
   end
 end
