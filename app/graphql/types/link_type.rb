@@ -13,13 +13,13 @@ module Types
     field :votes, [Types::VoteType], null: true
 
     # Batch loading
-    def votes
-      RecordLoader.for(::Vote).load(object.vote_ids)
-    end
+    # def votes
+    #   RecordLoader.for(::Vote).load(object.vote_ids)
+    # end
 
     # Dataloader
-    # def author
-    #   dataloader.with(::Sources::ActiveRecord, ::Vote).load(object.vote_ids)
-    # end
+    def votes
+      dataloader.with(::Sources::ActiveRecord, ::Vote).load(object.vote_ids)
+    end
   end
 end
