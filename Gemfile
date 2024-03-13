@@ -10,6 +10,10 @@ gem "bcrypt", "~> 3.1.13"
 
 gem 'search_object_graphql', '0.3.1'
 
+gem 'graphql-batch'
+
+gem "ar_lazy_preload"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 
