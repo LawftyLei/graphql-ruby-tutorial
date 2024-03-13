@@ -1,4 +1,4 @@
-class Sources::ActiveRecord < GraphQL::Dataloader::Source
+class DataLoader < GraphQL::Dataloader
   def initialize(model_class)
     @model_class = model_class
   end

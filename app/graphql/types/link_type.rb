@@ -1,5 +1,5 @@
 require 'loaders/record_loader'
-# require 'loaders/data_loader'
+require 'loaders/data_loader'
 
 module Types
   class LinkType < Types::BaseObject
@@ -19,7 +19,8 @@ module Types
 
     # Dataloader
     def votes
-      dataloader.with(::Sources::ActiveRecord, ::Vote).load(object.vote_ids)
+      DataLoader.for(::Vote).load(object.vote_ids)
+      # DataLoader.for(::Vote).load(object.vote_ids)
     end
   end
 end
