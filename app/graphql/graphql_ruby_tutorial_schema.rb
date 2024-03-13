@@ -10,4 +10,5 @@ class GraphqlRubyTutorialSchema < GraphQL::Schema
   use GraphQL::Pagination::Connections
 
   use GraphQL::Batch
+  use GraphQL::Dataloader
 end

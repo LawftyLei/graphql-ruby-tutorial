@@ -84,7 +84,7 @@ GEM
     graphiql-rails (1.7.0)
       railties
       sprockets-rails
-    graphql (1.11.6)
+    graphql (1.12.0)
     graphql-batch (0.5.2)
       graphql (>= 1.10, < 3)
       promise.rb (~> 0.7.2)
@@ -200,7 +200,7 @@ DEPENDENCIES
   bootsnap
   debug
   graphiql-rails (= 1.7.0)
-  graphql (= 1.11.6)
+  graphql (= 1.12)
   graphql-batch
   jbuilder
   puma (~> 5.0)

@@ -3,7 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
 
-gem 'graphql', '1.11.6'
+# gem 'graphql', '1.11.6'
+gem 'graphql', '1.12'
 gem 'graphiql-rails', '1.7.0', group: :development
 
 gem "bcrypt", "~> 3.1.13"

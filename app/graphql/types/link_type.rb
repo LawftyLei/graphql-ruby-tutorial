@@ -1,4 +1,5 @@
 require 'loaders/record_loader'
+require 'loaders/data_loader'
 
 module Types
   class LinkType < Types::BaseObject
@@ -11,8 +12,14 @@ module Types
     field :posted_by, UserType, null: true, method: :user
     field :votes, [Types::VoteType], null: true
 
-    def votes
-      RecordLoader.for(::Vote).load(object.vote_ids)
+    # Batch loading
+    # def votes
+    #   RecordLoader.for(::Vote).load(object.vote_ids)
+    # end
+
+    # Dataloader
+    def author
+      dataloader.with(::Sources::ActiveRecord, ::Vote).load(object.vote_ids)
     end
   end
 end
