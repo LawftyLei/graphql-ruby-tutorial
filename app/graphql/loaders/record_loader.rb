@@ -4,7 +4,16 @@ class RecordLoader < GraphQL::Batch::Loader
   end
 
   def perform(ids)
-    @model.where(id: ids).each { |record| fulfill(record.id, record) }
-    ids.each { |id| fulfill(id, nil) unless fulfilled?(id) }
+    begin
+      records = @model.where(id: ids).index_by(&:id)
+      p records
+      ids.each do |id|
+        record = records[id]
+        fulfill(id, record) if record
+      end
+    rescue StandardError => e
+      # Handle errors appropriately, reject the promises with an error
+      ids.each { |id| reject(id, e) unless fulfilled?(id) }
+    end
   end
 end

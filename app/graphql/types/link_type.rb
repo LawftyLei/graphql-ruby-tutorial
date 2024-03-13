@@ -12,14 +12,18 @@ module Types
     field :posted_by, UserType, null: true, method: :user
     field :votes, [Types::VoteType], null: true
 
-    # Batch loading
+    def posted_by
+      RecordLoader.for(User).load(object.user_id)
+    end
+
     def votes
       RecordLoader.for(::Vote).load(object.vote_ids)
     end
 
+
     # Dataloader
     # def votes
-      # DataLoader.for(::Vote).load(object.vote_ids)
+      # dataloader.with(::Sources::ActiveRecord, ::Vote).load(object.vote_ids)
     # end
   end
 end
