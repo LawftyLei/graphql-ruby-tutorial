@@ -17,13 +17,7 @@ module Types
     end
 
     def votes
-      RecordLoader.for(::Vote).load(object.vote_ids)
+      RecordLoader.for(Vote).load(object.vote_ids)
     end
-
-
-    # Dataloader
-    # def votes
-      # dataloader.with(::Sources::ActiveRecord, ::Vote).load(object.vote_ids)
-    # end
   end
 end
