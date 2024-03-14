@@ -1,4 +1,5 @@
 require 'loaders/record_loader'
+require 'loaders/user_loader'
 
 module Types
   class UserType < Types::BaseObject
@@ -8,8 +9,8 @@ module Types
     field :votes, [VoteType], null: true
     field :links, [LinkType], null: true
 
-    # def votes
-    #   RecordLoader.for(::Vote).load(object.vote_ids)
-    # end
+    def votes
+      UserLoader.for(Vote).load(object.id)
+    end
   end
 end
